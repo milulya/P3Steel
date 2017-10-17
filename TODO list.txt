@@ -1,0 +1,4 @@
+
+----------   For Calibration -------------
+
+# check if fan speed is good. other wise see "define FAN_SOFT_PWM" in conigurations.h
