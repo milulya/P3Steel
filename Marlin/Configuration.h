@@ -796,7 +796,7 @@
 
 // The size of the print bed
 // TODO add size after glass installed
-#define X_BED_SIZE 200
+#define X_BED_SIZE 175
 #define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -806,7 +806,7 @@
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 // TODO add size when calibrating
-#define Z_MAX_POS 200
+#define Z_MAX_POS 60
 
 // If enabled, axes won't move below MIN_POS in response to movement commands.
 #define MIN_SOFTWARE_ENDSTOPS
@@ -1024,7 +1024,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (2*60)
 
 //=============================================================================
 //============================= Additional Features ===========================
