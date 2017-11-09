@@ -796,7 +796,7 @@
 
 // The size of the print bed
 // TODO add size after glass installed
-#define X_BED_SIZE 175
+#define X_BED_SIZE 197
 #define Y_BED_SIZE 170
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
