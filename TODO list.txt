@@ -1,4 +1,8 @@
 
+check type of y belt idler bearing, better be 623ZZ
+
+
 ----------   For Calibration -------------
 
 # check if fan speed is good. other wise see "define FAN_SOFT_PWM" in conigurations.h
+# check microstepiing setting on the driver. see the the motor driver data sheet
