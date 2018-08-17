@@ -349,7 +349,7 @@
 // @section homing
 
 // Homing hits each endstop, retracts by these distances, then does a slower bump.
-#define X_HOME_BUMP_MM 5
+#define X_HOME_BUMP_MM 0
 #define Y_HOME_BUMP_MM 0
 #define Z_HOME_BUMP_MM 2
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
@@ -1036,10 +1036,10 @@
   #define X_CURRENT          800  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS        16  // 0..256
 
-  #define Y_CURRENT          1000
+  #define Y_CURRENT          800
   #define Y_MICROSTEPS        16
 
-  #define Z_CURRENT          1000
+  #define Z_CURRENT          800
   #define Z_MICROSTEPS        16
 
   #define X2_CURRENT         800
@@ -1051,7 +1051,7 @@
   #define Z2_CURRENT         800
   #define Z2_MICROSTEPS       16
 
-  #define E0_CURRENT         1200
+  #define E0_CURRENT         800
   #define E0_MICROSTEPS       16
 
   #define E1_CURRENT         800
@@ -1105,7 +1105,7 @@
   #define Y2_HYBRID_THRESHOLD    100
   #define Z_HYBRID_THRESHOLD       3
   #define Z2_HYBRID_THRESHOLD      3
-  #define E0_HYBRID_THRESHOLD     15
+  #define E0_HYBRID_THRESHOLD     46
   #define E1_HYBRID_THRESHOLD     30
   #define E2_HYBRID_THRESHOLD     30
   #define E3_HYBRID_THRESHOLD     30
@@ -1126,15 +1126,15 @@
   #define SENSORLESS_HOMING // TMC2130 only
 
   #if ENABLED(SENSORLESS_HOMING)
-    #define X_HOMING_SENSITIVITY  8
-    #define Y_HOMING_SENSITIVITY  8
+    #define X_HOMING_SENSITIVITY  20
+    #define Y_HOMING_SENSITIVITY  20
   #endif
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
    * M122 S0/1 will enable continous reporting.
    */
-  #define TMC_DEBUG
+  //#define TMC_DEBUG
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
