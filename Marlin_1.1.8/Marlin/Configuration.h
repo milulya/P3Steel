@@ -536,7 +536,7 @@
 #define NEMA17_MOTOR_STEPS (NEMA17_FULL_STEPS * NEMA17_MICROSTEPS)
 #define PULLEY_PITCH 2.0
 #define PULLEY_TEETH 20.0
-#define Z_ROD_PITCH 0.8
+#define Z_ROD_PITCH 2
 
 #define WADE_PULLEY_TEETH 9 //11.0
 #define WADE_GEAR_TEETH 47 //45.0
@@ -548,7 +548,7 @@
 #define HOBBED_BOLD_CIRC (M_PI * HOBBED_BOLT_DIAM)
 #define WADE_E_STEPS (NEMA17_MOTOR_STEPS * WADE_GEAR_RATIO / HOBBED_BOLD_CIRC)
 // --------- End of additional code ---------------------------
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { XY_STEPS, XY_STEPS, 4000, 99 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { XY_STEPS, XY_STEPS, Z_STEPS, 100 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -707,7 +707,7 @@
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 5000 
+#define XY_PROBE_SPEED 4500 
 
 // Speed for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1413,7 +1413,7 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
 
 //
 // SPEAKER/BUZZER
