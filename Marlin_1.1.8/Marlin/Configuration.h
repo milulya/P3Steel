@@ -536,7 +536,7 @@
 #define NEMA17_MOTOR_STEPS (NEMA17_FULL_STEPS * NEMA17_MICROSTEPS)
 #define PULLEY_PITCH 2.0
 #define PULLEY_TEETH 20.0
-#define Z_ROD_PITCH 2
+#define Z_ROD_PITCH 8
 
 #define WADE_PULLEY_TEETH 9 //11.0
 #define WADE_GEAR_TEETH 47 //45.0
@@ -548,14 +548,14 @@
 #define HOBBED_BOLD_CIRC (M_PI * HOBBED_BOLT_DIAM)
 #define WADE_E_STEPS (NEMA17_MOTOR_STEPS * WADE_GEAR_RATIO / HOBBED_BOLD_CIRC)
 // --------- End of additional code ---------------------------
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { XY_STEPS, XY_STEPS, Z_STEPS, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { XY_STEPS, XY_STEPS, Z_STEPS, 100 } // {80, 80, 400, 100}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 2.25, 45 }
+#define DEFAULT_MAX_FEEDRATE          { 80, 80, 20, 60 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -563,7 +563,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 65, 10000 }  // Z max accel was 100
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }  // Z max accel 65 for m5 lead screw
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -702,7 +702,7 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -24  // X offset: -left  +right  [of the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER 30  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
@@ -734,8 +734,8 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   15 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES 10 // Z Clearance between probe points
+#define Z_CLEARANCE_DEPLOY_PROBE   8 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES 5 // Z Clearance between probe points
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -801,8 +801,8 @@
 // The size of the print bed
 #define X_BED_SIZE 200
 #define Y_BED_SIZE 200
-#define X_ORIGIN_OFFSET -37
-#define Y_ORIGIN_OFFSET -14
+#define X_ORIGIN_OFFSET -33
+#define Y_ORIGIN_OFFSET 0
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS X_ORIGIN_OFFSET
@@ -810,7 +810,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 180
+#define Z_MAX_POS 210
 
 /**
  * Software Endstops
@@ -1061,7 +1061,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (16*60)
 
 // @section calibrate
 
