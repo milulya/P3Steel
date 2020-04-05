@@ -1,0 +1,10 @@
+CHECK WHEN TESING
+
+all endstop are defined to be interupt
+Try to enabel s curve accelaration
+If  necessary disable Z_MIN_PROBE_REPEATABILITY_TEST
+bed level is UBL - new territory
+check "Set the boundaries for probing"
+
+conf_ADV:
+remove TMC_DEBUG when dont need it anymore
