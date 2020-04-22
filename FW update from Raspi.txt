@@ -1,0 +1,4 @@
+install avrdude
+upload firmware hex/elf binary file (checked only with hex) to /home/pi
+run "avrdude -p atmega2560 -b 115200 -c wiring -P /dev/ttyUSB0 -D -U flash:w:firmware.hex:i" for hex file
+run "avrdude -p atmega2560 -b 115200 -c wiring -P /dev/ttyUSB0 -D -U flash:w:firmware.hex:e" for elf file

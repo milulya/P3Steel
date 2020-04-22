@@ -1004,17 +1004,17 @@
  * Note that M207 / M208 / M209 settings are saved to EEPROM.
  *
  */
-//#define FWRETRACT  // ONLY PARTIALLY TESTED
+#define FWRETRACT  // ONLY PARTIALLY TESTED
 #if ENABLED(FWRETRACT)
-  #define MIN_AUTORETRACT 0.1             // When auto-retract is on, convert E moves of this length and over
+  #define MIN_AUTORETRACT 0.5             // When auto-retract is on, convert E moves of this length and over
   #define MAX_AUTORETRACT 10.0            // Upper limit for auto-retract conversion
   #define RETRACT_LENGTH 3                // Default retract length (positive mm)
   #define RETRACT_LENGTH_SWAP 13          // Default swap retract length (positive mm), for extruder change
-  #define RETRACT_FEEDRATE 45             // Default feedrate for retracting (mm/s)
+  #define RETRACT_FEEDRATE 40             // Default feedrate for retracting (mm/s)
   #define RETRACT_ZLIFT 0                 // Default retract Z-lift
   #define RETRACT_RECOVER_LENGTH 0        // Default additional recover length (mm, added to retract length when recovering)
   #define RETRACT_RECOVER_LENGTH_SWAP 0   // Default additional swap recover length (mm, added to retract length when recovering from extruder change)
-  #define RETRACT_RECOVER_FEEDRATE 8      // Default feedrate for recovering from retraction (mm/s)
+  #define RETRACT_RECOVER_FEEDRATE 15      // Default feedrate for recovering from retraction (mm/s)
   #define RETRACT_RECOVER_FEEDRATE_SWAP 8 // Default feedrate for recovering from swap retraction (mm/s)
 #endif
 
@@ -1167,7 +1167,7 @@
   #define Y_CURRENT          800
   #define Y_MICROSTEPS        16
 
-  #define Z_CURRENT          800
+  #define Z_CURRENT          900
   #define Z_MICROSTEPS        16
 
   #define X2_CURRENT         800
@@ -1176,10 +1176,10 @@
   #define Y2_CURRENT         800
   #define Y2_MICROSTEPS       16
 
-  #define Z2_CURRENT         800
+  #define Z2_CURRENT         900
   #define Z2_MICROSTEPS       16
 
-  #define E0_CURRENT         800
+  #define E0_CURRENT         900
   #define E0_MICROSTEPS       16
 
   #define E1_CURRENT         800
@@ -1241,9 +1241,9 @@
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       3
-  #define Z2_HYBRID_THRESHOLD      3
-  #define E0_HYBRID_THRESHOLD      1
+  #define Z_HYBRID_THRESHOLD      20 //3
+  #define Z2_HYBRID_THRESHOLD     20 //3
+  #define E0_HYBRID_THRESHOLD     35
   #define E1_HYBRID_THRESHOLD     30
   #define E2_HYBRID_THRESHOLD     30
   #define E3_HYBRID_THRESHOLD     30
@@ -1287,7 +1287,7 @@
    */
   #define TMC_Z_CALIBRATION
   #if ENABLED(TMC_Z_CALIBRATION)
-    #define CALIBRATION_CURRENT 250
+    #define CALIBRATION_CURRENT 600
     #define CALIBRATION_EXTRA_HEIGHT 10
   #endif
 
